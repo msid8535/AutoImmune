@@ -26,4 +26,11 @@ Overall our goal is to create a more efficient way for patients to record, obser
     - Solution: We performed a split-filter-join operation. The data was filtered into separate dataframes for input features and target scores, which were then joined on a multi-index of user_id and checkin_date.
 - Problem: User-generated data contained numerous typographical errors, abbreviations, and inconsistencies, making standard one-hot encoding unsuitable.
     - Solution: The GapEncoder from the skrub library was used to handle this "dirty" categorical data by encoding it based on latent topics derived from n-gram analysis.
+ 
+# Future Work
+The model shows potential but requires further refinement to be clinically applicable.
+- Improve Accuracy: The immediate priority is to improve the model's predictive accuracy. This could be achieved by using cleaner, more structured data or by expanding the dataset to include more conditions.
+- Deeper Insights: Future versions of the model could be trained to discern not just what symptoms are important, but how they correlate with the severity of the condition to a higher degree of accuracy.
+- Enhanced Data Collection: The data input process itself could be improved. For instance, using pre-set lists for symptoms and treatments instead of free-text entry would lead to cleaner data from the start.
+
 
