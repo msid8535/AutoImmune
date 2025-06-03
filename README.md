@@ -15,4 +15,15 @@ Overall our goal is to create a more efficient way for patients to record, obser
     - Pandas
     - Scikit-learn
     - Skrub
+ 
+# Key Findings
+- The model successfully identified joint pain as the most important factor influencing Fibromyalgia severity, which is a well-known symptom.
+- Interestingly, depression and stress were found to be the second most important factor. This is a less-recognized symptom, highlighting the model's potential to uncover overlooked aspects of a condition.
+- This finding suggests that focusing on the mental health aspects of Fibromyalgia could be crucial for treatment and may help reduce hospital visits
+
+# Issues Faced & Solutions
+- Problem: The raw CSV data was not structured for direct analysis, with input variables and target outputs in different rows under the same columns. 
+    - Solution: We performed a split-filter-join operation. The data was filtered into separate dataframes for input features and target scores, which were then joined on a multi-index of user_id and checkin_date.
+- Problem: User-generated data contained numerous typographical errors, abbreviations, and inconsistencies, making standard one-hot encoding unsuitable.
+    - Solution: The GapEncoder from the skrub library was used to handle this "dirty" categorical data by encoding it based on latent topics derived from n-gram analysis.
 
